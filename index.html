@@ -12,6 +12,7 @@
   <link rel="manifest" href="./manifest.json">
   <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles/game.css">
+  <link rel="stylesheet" href="./styles/ios.css">
 </head>
 <body>
   <main id="app">
@@ -54,8 +55,8 @@
     <div id="toast" class="toast" role="status"></div>
 
     <section id="mobileControls" class="mobile-controls hidden" aria-label="Touch controls">
-      <div id="movePad" class="move-pad"><div class="move-ring"></div><div id="moveKnob" class="move-knob"></div></div>
-      <div class="action-cluster"><button id="interactButton" class="action-button interact">PICK UP</button><button id="reloadButton" class="action-button reload">RELOAD</button><button id="fireButton" class="action-button fire">FIRE</button></div>
+      <div id="movePad" class="move-pad" aria-label="Move joystick"><div class="move-ring"></div><div id="moveKnob" class="move-knob"></div></div>
+      <div class="action-cluster"><button id="interactButton" class="action-button interact" aria-label="Pick up nearby item">PICK UP</button><button id="reloadButton" class="action-button reload" aria-label="Reload weapon">RELOAD</button><button id="fireButton" class="action-button fire" aria-label="Fire weapon">FIRE</button></div>
     </section>
   </main>
   <noscript>This game requires JavaScript.</noscript>
