@@ -1,0 +1,1 @@
+{"name":"Zombie Survival","short_name":"Survival","description":"Touch-first HTML5 zombie survival game.","start_url":"./","scope":"./","display":"standalone","orientation":"any","background_color":"#101711","theme_color":"#101711","icons":[{"src":"./assets/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
