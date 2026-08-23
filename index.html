@@ -10,105 +10,22 @@
   <meta name="mobile-web-app-capable" content="yes">
   <title>Zombie Survival</title>
   <link rel="manifest" href="./manifest.json">
-  <link rel="apple-touch-icon" href="./assets/icon-192.png">
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles/game.css">
 </head>
 <body>
   <main id="app">
     <canvas id="gameCanvas" aria-label="Zombie Survival game"></canvas>
-
-    <section id="loadingScreen" class="screen visible">
-      <div class="panel">
-        <div class="brand">ZOMBIE SURVIVAL</div>
-        <div class="loader" aria-hidden="true"></div>
-        <p>Loading…</p>
-      </div>
-    </section>
-
-    <section id="menuScreen" class="screen">
-      <div class="panel menu-panel">
-        <div class="eyebrow">HTML5 SURVIVAL</div>
-        <h1>Zombie Survival</h1>
-        <p>Survive 10 levels. Find better guns. Don’t let the horde reach you.</p>
-        <button id="startButton" class="primary">START GAME</button>
-        <div class="settings-row">
-          <button id="musicToggle" class="secondary">Music: On</button>
-          <button id="sfxToggle" class="secondary">SFX: On</button>
-        </div>
-        <p class="help desktop-help">WASD move · Mouse aim · Click fire · R reload · E pick up</p>
-        <p class="help mobile-help">Move with the left stick · Use Fire, Reload and Pick Up</p>
-      </div>
-    </section>
-
-    <section id="pauseScreen" class="screen">
-      <div class="panel">
-        <h2>Paused</h2>
-        <button id="resumeButton" class="primary">RESUME</button>
-        <button id="pauseMenuButton" class="secondary wide">MAIN MENU</button>
-      </div>
-    </section>
-
-    <section id="levelCompleteScreen" class="screen">
-      <div class="panel">
-        <div class="eyebrow">AREA CLEAR</div>
-        <h2 id="levelCompleteTitle">Level Complete</h2>
-        <p id="levelCompleteText"></p>
-        <button id="nextLevelButton" class="primary">NEXT LEVEL</button>
-      </div>
-    </section>
-
-    <section id="gameOverScreen" class="screen">
-      <div class="panel">
-        <div class="eyebrow danger">RUN ENDED</div>
-        <h2 id="gameOverTitle">Game Over</h2>
-        <p id="gameOverText"></p>
-        <button id="playAgainButton" class="primary">PLAY AGAIN</button>
-        <button id="gameOverMenuButton" class="secondary wide">MAIN MENU</button>
-      </div>
-    </section>
-
-    <section id="winScreen" class="screen">
-      <div class="panel">
-        <div class="eyebrow success">SURVIVOR</div>
-        <h2>You Win!</h2>
-        <p>You survived all 10 levels.</p>
-        <button id="winPlayAgainButton" class="primary">PLAY AGAIN</button>
-        <button id="winMenuButton" class="secondary wide">MAIN MENU</button>
-      </div>
-    </section>
-
-    <header id="hud" class="hud hidden" aria-live="polite">
-      <div class="hud-card stats-card">
-        <div class="hud-topline">
-          <strong id="levelLabel">Level 1 / 10</strong>
-          <span id="enemyLabel">Zombies 0</span>
-        </div>
-        <div class="health-line"><span>HP</span><span id="healthLabel">100</span></div>
-        <div class="bar"><div id="healthFill" class="health-fill"></div></div>
-      </div>
-      <div class="hud-card weapon-card">
-        <strong id="weaponLabel">Pistol</strong>
-        <span id="ammoLabel">12 / 72</span>
-      </div>
-      <button id="pauseButton" class="icon-button" aria-label="Pause">Ⅱ</button>
-    </header>
-
+    <section id="loadingScreen" class="screen visible"><div class="panel"><div class="brand">ZOMBIE SURVIVAL</div><div class="loader" aria-hidden="true"></div><p>Loading…</p></div></section>
+    <section id="menuScreen" class="screen"><div class="panel menu-panel"><div class="eyebrow">HTML5 SURVIVAL</div><h1>Zombie Survival</h1><p>Survive 10 levels. Find better guns. Don’t let the horde reach you.</p><button id="startButton" class="primary">START GAME</button><div class="settings-row"><button id="musicToggle" class="secondary">Music: On</button><button id="sfxToggle" class="secondary">SFX: On</button></div><p class="help desktop-help">WASD move · Mouse aim · Click fire · R reload · E pick up</p><p class="help mobile-help">Move with the left stick · Use Fire, Reload and Pick Up</p></div></section>
+    <section id="pauseScreen" class="screen"><div class="panel"><h2>Paused</h2><button id="resumeButton" class="primary">RESUME</button><button id="pauseMenuButton" class="secondary wide">MAIN MENU</button></div></section>
+    <section id="levelCompleteScreen" class="screen"><div class="panel"><div class="eyebrow">AREA CLEAR</div><h2 id="levelCompleteTitle">Level Complete</h2><p id="levelCompleteText"></p><button id="nextLevelButton" class="primary">NEXT LEVEL</button></div></section>
+    <section id="gameOverScreen" class="screen"><div class="panel"><div class="eyebrow danger">RUN ENDED</div><h2 id="gameOverTitle">Game Over</h2><p id="gameOverText"></p><button id="playAgainButton" class="primary">PLAY AGAIN</button><button id="gameOverMenuButton" class="secondary wide">MAIN MENU</button></div></section>
+    <section id="winScreen" class="screen"><div class="panel"><div class="eyebrow success">SURVIVOR</div><h2>You Win!</h2><p>You survived all 10 levels.</p><button id="winPlayAgainButton" class="primary">PLAY AGAIN</button><button id="winMenuButton" class="secondary wide">MAIN MENU</button></div></section>
+    <header id="hud" class="hud hidden" aria-live="polite"><div class="hud-card stats-card"><div class="hud-topline"><strong id="levelLabel">Level 1 / 10</strong><span id="enemyLabel">Zombies 0</span></div><div class="health-line"><span>HP</span><span id="healthLabel">100</span></div><div class="bar"><div id="healthFill" class="health-fill"></div></div></div><div class="hud-card weapon-card"><strong id="weaponLabel">Pistol</strong><span id="ammoLabel">12 / 72</span></div><button id="pauseButton" class="icon-button" aria-label="Pause">Ⅱ</button></header>
     <div id="toast" class="toast" role="status"></div>
-
-    <section id="mobileControls" class="mobile-controls hidden" aria-label="Touch controls">
-      <div id="movePad" class="move-pad">
-        <div class="move-ring"></div>
-        <div id="moveKnob" class="move-knob"></div>
-      </div>
-
-      <div class="action-cluster">
-        <button id="interactButton" class="action-button interact">PICK UP</button>
-        <button id="reloadButton" class="action-button reload">RELOAD</button>
-        <button id="fireButton" class="action-button fire">FIRE</button>
-      </div>
-    </section>
+    <section id="mobileControls" class="mobile-controls hidden" aria-label="Touch controls"><div id="movePad" class="move-pad"><div class="move-ring"></div><div id="moveKnob" class="move-knob"></div></div><div class="action-cluster"><button id="interactButton" class="action-button interact">PICK UP</button><button id="reloadButton" class="action-button reload">RELOAD</button><button id="fireButton" class="action-button fire">FIRE</button></div></section>
   </main>
-
   <noscript>This game requires JavaScript.</noscript>
   <script type="module" src="./src/main.js"></script>
 </body>
