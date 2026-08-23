@@ -1,0 +1,90 @@
+/* iPhone/iPad Safari hardening layer. Loaded after game.css. */
+html.touch-device,
+html.touch-device body {
+  touch-action: none;
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* iPad can report a fine pointer when a trackpad is connected. JS adds
+   .touch-device from navigator.maxTouchPoints so touch controls stay visible. */
+html.touch-device .mobile-controls {
+  display: block !important;
+}
+html.touch-device .mobile-help {
+  display: block !important;
+}
+html.touch-device .desktop-help {
+  display: none !important;
+}
+
+html.touch-device .move-pad,
+html.touch-device .action-button,
+html.touch-device .icon-button {
+  touch-action: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+}
+
+/* Keep every control comfortably inside notch/Home Indicator safe areas. */
+html.ios-device .move-pad {
+  left: max(16px, calc(env(safe-area-inset-left) + 10px));
+  bottom: max(20px, calc(env(safe-area-inset-bottom) + 12px));
+}
+html.ios-device .action-cluster {
+  right: max(14px, calc(env(safe-area-inset-right) + 8px));
+  bottom: max(18px, calc(env(safe-area-inset-bottom) + 10px));
+}
+html.ios-device .hud {
+  left: max(10px, calc(env(safe-area-inset-left) + 6px));
+  right: max(10px, calc(env(safe-area-inset-right) + 6px));
+  top: max(10px, calc(env(safe-area-inset-top) + 6px));
+}
+
+/* Minimum physical touch targets. */
+html.touch-device .action-button,
+html.touch-device .icon-button {
+  min-width: 48px;
+  min-height: 48px;
+}
+
+/* Safari dynamic browser bars: fixed viewport plus dvh where available. */
+@supports (height: 100dvh) {
+  html.ios-safari,
+  html.ios-safari body,
+  html.ios-safari #app,
+  html.ios-safari #gameCanvas {
+    height: 100dvh;
+    max-height: 100dvh;
+  }
+}
+
+/* Landscape iPhone has very little vertical room. */
+@media (orientation: landscape) and (max-height: 500px) {
+  html.touch-device .move-pad {
+    width: 112px;
+    height: 112px;
+  }
+  html.touch-device .action-cluster {
+    transform: scale(.78);
+    transform-origin: right bottom;
+  }
+  html.touch-device .score-card {
+    font-size: 9px;
+  }
+}
+
+/* Small iPhone SE-class screens. */
+@media (max-width: 340px) {
+  html.touch-device .move-pad {
+    width: 112px;
+    height: 112px;
+  }
+  html.touch-device .action-cluster {
+    transform: scale(.84);
+    transform-origin: right bottom;
+  }
+}
